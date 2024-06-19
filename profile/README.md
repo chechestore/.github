@@ -13,4 +13,4 @@
 
 没什么好介绍的，先这样吧, 呼呼呼~
 
-![](../img/6fd3d7cffe8cb4186ce50b8bddc1c7ea.jpg)
+<img src="../img/6fd3d7cffe8cb4186ce50b8bddc1c7ea.jpg" width="180" alt="狐狸睡大觉！">
