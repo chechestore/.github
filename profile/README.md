@@ -10,3 +10,7 @@
 🍿 Fun facts - what does your team eat for breakfast?
 🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 -->
+
+没什么好介绍的，先这样吧, 呼呼呼~
+
+![](../img/6fd3d7cffe8cb4186ce50b8bddc1c7ea.jpg)
