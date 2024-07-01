@@ -1,0 +1,33 @@
+name: Pull and Push Docker Image to Aliyun Registry
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_name:
+        description: 'Name of the Docker image to pull'
+        required: true
+        default: 'hello-word'
+      image_version:
+        description: 'Version of the Docker image to pull'
+        required: false
+        default: 'latest'
+
+jobs:
+  pull-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Aliyun Docker Registry
+        run: docker login --username=${{ secrets.ALIYUN_USERNAME }} --password=${{ secrets.ALIYUN_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
+
+      - name: Pull Docker image from Docker Hub
+        run: docker pull ${{ github.event.inputs.image_name }}:${{ github.event.inputs.image_version }}
+
+      - name: Tag Docker image for Aliyun
+        run: docker tag ${{ github.event.inputs.image_name }} registry.cn-hangzhou.aliyuncs.com/chechezu/chechezu_docker:${{ github.event.inputs.image_version }}
+
+      - name: Push Docker image to Aliyun
+        run: docker push registry.cn-hangzhou.aliyuncs.com/chechezu/chechezu_docker:${{ github.event.inputs.image_version }}
