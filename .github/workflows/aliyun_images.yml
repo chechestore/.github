@@ -27,7 +27,7 @@ jobs:
         run: docker pull ${{ github.event.inputs.image_name }}:${{ github.event.inputs.image_version }}
 
       - name: Tag Docker image for Aliyun
-        run: docker tag ${{ github.event.inputs.image_name }}:${{ github.event.inputs.image_version }} registry.cn-hangzhou.aliyuncs.com/chechezu/chechezu_docker/${{ github.event.inputs.image_name }}:${{ github.event.inputs.image_version }}
+        run: docker tag ${{ github.event.inputs.image_name }}:${{ github.event.inputs.image_version }} registry.cn-hangzhou.aliyuncs.com/chechezu/${{ github.event.inputs.image_name }}:${{ github.event.inputs.image_version }}
 
       - name: Push Docker image to Aliyun
-        run: docker push registry.cn-hangzhou.aliyuncs.com/chechezu/chechezu_docker:${{ github.event.inputs.image_version }}
+        run: docker push registry.cn-hangzhou.aliyuncs.com/chechezu/${{ github.event.inputs.image_name }}:${{ github.event.inputs.image_version }}
